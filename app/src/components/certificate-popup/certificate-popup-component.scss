@@ -11,6 +11,7 @@ certificate-popup {
       .certificate{
         @include translate("both", absolute);
         width: 85%;
+        top: 45%;
       }
     }
   }

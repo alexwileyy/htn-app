@@ -6,6 +6,7 @@ import { MyApp } from './app.component';
 import { TabsPage } from '../pages/tabs/tabs';
 import { WalletPage } from '../pages/wallet/wallet';
 import { CameraPage } from '../pages/camera/camera';
+import { VerificationPage } from '../pages/verification/verification';
 
 /*
   Components
@@ -27,6 +28,7 @@ import { QRScanner } from '@ionic-native/qr-scanner';
     TabsPage,
     WalletPage,
     CameraPage,
+    VerificationPage,
     HeaderComponent,
     WalletCatgeoryComponent,
     CertificatePopupComponent,
@@ -41,7 +43,8 @@ import { QRScanner } from '@ionic-native/qr-scanner';
     MyApp,
     TabsPage,
     WalletPage,
-    CameraPage
+    CameraPage,
+    VerificationPage
   ],
   providers: [
     StatusBar,

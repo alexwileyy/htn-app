@@ -1,24 +1,5 @@
 <!-- Generated template for the CertificateComponent component -->
 <div class="certificate-popup">
-  <!--<div class="certificate-popup__content">-->
-    <!--<div class="certificate-popup__content__box">-->
-      <!--<div class="certificate-popup__content__box__icon">-->
-        <!--&lt;!&ndash;<img src="{{icon}}"/>&ndash;&gt;-->
-      <!--</div>-->
-      <!--<h2>{{certificate.title}}</h2>-->
-      <!--<h3 class="certificate-popup__content__box__info__text">Certificate Info</h3>-->
-      <!--<div class="certificate-popup__content__box__info">-->
-        <!--<div class="certificate-popup__content__box__info__item">-->
-          <!--<p>issues by</p>-->
-          <!--<h3>{{certificate.recipientName}}</h3>-->
-        <!--</div>-->
-        <!--<div class="certificate-popup__content__box__info__item">-->
-          <!--<p>date signed</p>-->
-          <!--<h3>{{certificate.dateSigned}}</h3>-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
-    <!--<button class="certificate-popup__content__button" (click)="getVerificationCode(certificate)">Verification Code</button>-->
-  <!--</div>-->
-  <certificate-box [name]="certificate.recipientName" [title]="certificate.title" [date]="certificate.dateSigned"></certificate-box>
+
+  <certificate-box [name]="certificate.recipientName" [title]="certificate.title" [date]="certificate.dateSigned" status="passed"></certificate-box>
 </div>

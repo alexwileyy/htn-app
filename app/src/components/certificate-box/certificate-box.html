@@ -1,9 +1,20 @@
 <div class="certificate certificate__content">
   <div class="certificate__content__box">
-    <div class="certificate__content__box__icon">
+    <div *ngIf="type == 'popup'" class="certificate__content__box__icon certificate__content__box__icon__square">
       <!--<img src="{{icon}}"/>-->
     </div>
+    <div *ngIf="type == 'verification'" class="certificate__content__box__icon certificate__content__box__icon__circle">
+      <img *ngIf="status == 'passed'" src="./assets/img/landing/success.svg"/>
+      <img *ngIf="status == 'failed'" src="./assets/img/landing/revoked.svg"/>
+    </div>
     <h2>{{title}}</h2>
+    <hr>
+    <h4 class="certificate__content__box__verification certificate__content__box__verification__passed" *ngIf="type == 'verification' && status == 'passed'">
+      {{statusMessage}}
+    </h4>
+    <h4 class="certificate__content__box__verification certificate__content__box__verification__failed" *ngIf="type == 'verification' && status == 'failed'">
+      {{statusMessage}}
+    </h4>
     <h3 class="certificate__content__box__info__text">Certificate Info</h3>
     <div class="certificate__content__box__info">
       <div class="certificate__content__box__info__item">

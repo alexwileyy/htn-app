@@ -15,16 +15,23 @@ certificate-box {
           @include translate("x", relative);
           top: -40px;
           @include border-shadow(2px, 2px, 10px, rgba(0,0,0,0.15));
-          border-radius: 5px;
+
+          &__square{
+            border-radius: 5px;
+          }
+          &__circle{
+            border-radius: 50%;
+          }
         }
         h2{
           text-transform: capitalize;
           font-size: 25px;
-          margin: 5px auto 40px auto;
+          margin: 5px auto 0 auto;
         }
         &__info{
           display: flex;
           justify-content: center;
+          //margin-top: 40px;
           &__text{
             font-size: 18px;
             border-top: 1px solid rgba(0,0,0,0.16) !important;
@@ -47,6 +54,15 @@ certificate-box {
             &:nth-child(1){
               border-right: 1px solid rgba(0,0,0,0.16);
             }
+          }
+        }
+        &__verification{
+          padding-bottom: 20px;
+          &__passed{
+            color: #84E5A9;
+          }
+          &__failed{
+            color: #F88686;
           }
         }
       }

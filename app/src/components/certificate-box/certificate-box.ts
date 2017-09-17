@@ -16,12 +16,33 @@ export class CertificateBoxComponent {
   @Input() title:string;
   @Input() name:string;
   @Input() date: string;
+  @Input() type: string;
+  @Input() status: string;
+
+  public statusMessage: string;
 
   public certificate: any;
 
   constructor(public popup: PoupProvider) {
     console.log('Hello CertificateBoxComponent Component');
     this.certificate = this.popup.getCertificate();
+    // console.log('Status: ' + this.status);
+    // if(this.status == 'passed'){
+    //   this.statusMessage = 'Verification Passed';
+    // }
+    // else if(this.status == 'failed'){
+    //   this.statusMessage = 'Verification Failed';
+    // }
+  }
+
+  ngOnInit(){
+    console.log('Status: ' + this.status);
+    if(this.status == 'passed'){
+      this.statusMessage = 'Verification Passed';
+    }
+    else if(this.status == 'failed'){
+      this.statusMessage = 'Verification Failed';
+    }
   }
 
   getVerificationCode(){

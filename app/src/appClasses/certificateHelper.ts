@@ -6,11 +6,13 @@ export class certificateHelper{
     private title: string,
     private issuerName: string,
     private recipientName: string,
+    private dateSigned: string,
     private data: [{name: string}]
   ){
     this.title = title;
     this.issuerName = issuerName;
     this.recipientName = recipientName;
+    this.dateSigned = dateSigned;
     this.data = data;
   }
 
@@ -28,6 +30,9 @@ export class certificateHelper{
 
   getRecipientName(){
     return this.issuerName;
+  }
+  getDateSigned(){
+    return this.getDateSigned()
   }
 
   getData(){

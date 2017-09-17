@@ -5,19 +5,19 @@
       <div class="certificate-popup__content__box__icon">
         <!--<img src="{{icon}}"/>-->
       </div>
-      <h2>Something{{certificateName}}</h2>
-      <h3>Certificate Info</h3>
+      <h2>{{certificate.title}}</h2>
+      <h3 class="certificate-popup__content__box__info__text">Certificate Info</h3>
       <div class="certificate-popup__content__box__info">
         <div class="certificate-popup__content__box__info__item">
           <p>issues by</p>
-          <!--<h3>{{vertificateAuthor}}</h3>-->
+          <h3>{{certificate.recipientName}}</h3>
         </div>
         <div class="certificate-popup__content__box__info__item">
           <p>date signed</p>
-          <!--<h3>{{dateSigned}}</h3>-->
+          <h3>{{certificate.dateSigned}}</h3>
         </div>
       </div>
     </div>
-    <button class="certificate-popup__content__button"></button>
+    <button class="certificate-popup__content__button" (click)="getVerificationCode(certificate)">Verification Code</button>
   </div>
 </div>

@@ -10,12 +10,13 @@ import { CameraPage } from '../pages/camera/camera';
 /*
   Components
  */
-import { CertificateComponent } from '../components/certificate-popup/certificate';
 import { HeaderComponent } from '../components/header/header';
 import { WalletCatgeoryComponent } from '../components/wallet-catgeory/wallet-catgeory';
+import { CertificateComponent } from '../components/certificate-popup/certificate';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { PoupProvider } from '../providers/poup/poup'
 
 import { QRScanner } from '@ionic-native/qr-scanner';
 
@@ -44,7 +45,8 @@ import { QRScanner } from '@ionic-native/qr-scanner';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    QRScanner
+    QRScanner,
+    PoupProvider
   ]
 })
 export class AppModule {}

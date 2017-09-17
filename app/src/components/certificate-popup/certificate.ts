@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PoupProvider } from '../../providers/poup/poup'
 
 /**
  * Generated class for the CertificateComponent component.
@@ -12,11 +13,17 @@ import { Component } from '@angular/core';
 })
 export class CertificateComponent {
 
-  text: string;
+  public certificate: any;
 
-  constructor() {
+  constructor(public popup: PoupProvider) {
     console.log('Hello CertificateComponent Component');
-    this.text = 'Hello World';
+    this.certificate = this.popup.getCertificate();
+    console.log(this.certificate);
+
+  }
+
+  getVerificationCode(){
+    this.popup.togglePopup(null);
   }
 
 }

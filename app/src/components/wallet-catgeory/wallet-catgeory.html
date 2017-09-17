@@ -6,9 +6,9 @@
   </div>
   <hr class="wallet-category__divider">
   <ul class="wallet-category__list">
-    <li *ngFor="let block of data">
+    <li *ngFor="let block of data" (click)="togglePopup(block)">
       <p>{{block.getTitle()}}</p>
-      <img *ngIf="block.getBlockState() == 'active'" src="./assets/img/landing/success.svg"/>
+      <img *ngIf="block.getBlockState() == 'active'"  src="./assets/img/landing/success.svg"/>
       <img *ngIf="block.getBlockState() == 'reissued'" src="./assets/img/landing/warning.svg"/>
       <img *ngIf="block.getBlockState() == 'revoked'" src="./assets/img/landing/revoked.svg"/>
     </li>

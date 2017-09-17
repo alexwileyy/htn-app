@@ -5,10 +5,12 @@ import { CertificateComponent } from './certificate-popup/certificate';
 @NgModule({
 	declarations: [HeaderComponent,
     WalletCatgeoryComponent,
-    CertificateComponent],
+    CertificateComponent
+  ],
 	imports: [],
 	exports: [HeaderComponent,
     WalletCatgeoryComponent,
-    CertificateComponent]
+    CertificateComponent
+  ]
 })
 export class ComponentsModule {}

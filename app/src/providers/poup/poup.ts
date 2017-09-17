@@ -28,6 +28,10 @@ export class PoupProvider {
     console.log(this.showPoup)
   }
 
+  setState(state){
+    this.showPoup = state;
+  }
+
   getPopupStatus(){
     return this.showPoup;
   }

@@ -1,5 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input,  } from '@angular/core';
+import { NavController, NavParams } from 'ionic-angular';
 import { PoupProvider } from '../../providers/poup/poup'
+import { WalletPage } from "../../pages/wallet/wallet"
+import { CameraPage } from "../../pages/camera/camera"
 
 /**
  * Generated class for the CertificateBoxComponent component.
@@ -23,7 +26,7 @@ export class CertificateBoxComponent {
 
   public certificate: any;
 
-  constructor(public popup: PoupProvider) {
+  constructor(public popup: PoupProvider, public navCtrl: NavController) {
     console.log('Hello CertificateBoxComponent Component');
     this.certificate = this.popup.getCertificate();
     // console.log('Status: ' + this.status);
@@ -47,6 +50,14 @@ export class CertificateBoxComponent {
 
   getVerificationCode(){
     this.popup.togglePopup(null);
+  }
+
+  cancel(){
+    this.navCtrl.setRoot(WalletPage);
+  }
+
+  cameraPage(){
+    this.navCtrl.setRoot(CameraPage);
   }
 
 }

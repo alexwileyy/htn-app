@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {QRScanner, QRScannerStatus} from '@ionic-native/qr-scanner';
 
-import { WalletPage } from '../wallet/wallet';
+import { VerificationPage } from '../verification/verification';
 
 /**
  * Generated class for the CameraPage page.
@@ -32,7 +32,12 @@ export class CameraPage {
           // start scanning
           this.scanSub = this.qrScanner.scan().subscribe(function (text: string) {
             alert('Scanned something' + text);
-            this.navCtrl.setRoot(WalletPage);
+            this.navCtrl.push(VerificationPage, {
+              recipientName: 'Google',
+              title: 'Internship',
+              dateSigned: '01-OCT-17',
+              status: 'passed'
+            });
 
             // hide camera preview
             this.qrScanner.hide();

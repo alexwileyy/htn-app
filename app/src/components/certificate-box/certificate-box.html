@@ -27,5 +27,9 @@
       </div>
     </div>
   </div>
-  <button class="certificate__content__button" (click)="getVerificationCode(certificate)">Verification Code</button>
+  <button *ngIf="type == 'popup'" class="certificate__content__button certificate__content__button__full" (click)="getVerificationCode(certificate)">Verification Code</button>
+  <div *ngIf="type == 'verification'">
+    <button class="certificate__content__button certificate__content__button__full" (click)="cameraPage()">Scan Again</button>
+    <button class="certificate__content__button certificate__content__button__outline" (click)="cancel()">Cancel</button>
+  </div>
 </div>

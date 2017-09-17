@@ -7,5 +7,6 @@
 
 
 <ion-content class="verification">
-  <certificate-box [name]="certificate.recipientName" [title]="certificate.title" [date]="certificate.dateSigned" status="passed"></certificate-box>
+  <app-header></app-header>
+  <certificate-box [name]="recipientName" [title]="title" [date]="dateSigned" type="verification" [status]="status"></certificate-box>
 </ion-content>

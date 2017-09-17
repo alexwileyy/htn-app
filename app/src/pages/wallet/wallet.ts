@@ -18,7 +18,7 @@ export class WalletPage {
 
   public walletData: any = new Array();
 
-  public showPopup: any;
+  public showPopup: any = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public popup: PoupProvider) {
     for(let i = 0; i <= 3; i++){
@@ -40,6 +40,7 @@ export class WalletPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad WalletPage');
+    this.popup.setState(false);
     this.showPopup = this.popup.getPopupStatus();
   }
 

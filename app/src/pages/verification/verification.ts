@@ -15,7 +15,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class VerificationPage {
 
+  public recipientName: string;
+  public title: string;
+  public dateSigned: string;
+  public status: string;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.recipientName = this.navParams.get('recipientName');
+    this.title  = this.navParams.get('title');
+    this.dateSigned = this.navParams.get('dateSigned');
+    this.status = this.navParams.get('status');
   }
 
   ionViewDidLoad() {

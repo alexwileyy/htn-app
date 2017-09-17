@@ -9,9 +9,9 @@ import { PoupProvider } from '../../providers/poup/poup'
  */
 @Component({
   selector: 'certificate-popup',
-  templateUrl: 'certificate.html'
+  templateUrl: 'certificate-popup-component.html'
 })
-export class CertificateComponent {
+export class CertificatePopupComponent {
 
   public certificate: any;
 

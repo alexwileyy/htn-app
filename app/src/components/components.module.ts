@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { HeaderComponent } from './header/header';
 import { WalletCatgeoryComponent } from './wallet-catgeory/wallet-catgeory';
-import { CertificateComponent } from './certificate-popup/certificate';
+import { CertificatePopupComponent } from './certificate-popup/certificate-popup-component';
 @NgModule({
 	declarations: [HeaderComponent,
     WalletCatgeoryComponent,
-    CertificateComponent
+    CertificatePopupComponent
   ],
 	imports: [],
 	exports: [HeaderComponent,
     WalletCatgeoryComponent,
-    CertificateComponent
+    CertificatePopupComponent
   ]
 })
 export class ComponentsModule {}

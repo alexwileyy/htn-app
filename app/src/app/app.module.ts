@@ -12,7 +12,7 @@ import { CameraPage } from '../pages/camera/camera';
  */
 import { HeaderComponent } from '../components/header/header';
 import { WalletCatgeoryComponent } from '../components/wallet-catgeory/wallet-catgeory';
-import { CertificateComponent } from '../components/certificate-popup/certificate';
+import { CertificatePopupComponent } from '../components/certificate-popup/certificate-popup-component';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -28,7 +28,7 @@ import { QRScanner } from '@ionic-native/qr-scanner';
     CameraPage,
     HeaderComponent,
     WalletCatgeoryComponent,
-    CertificateComponent
+    CertificatePopupComponent
   ],
   imports: [
     BrowserModule,

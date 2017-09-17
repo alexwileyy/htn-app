@@ -1,9 +1,26 @@
-page-camera {
-  ion-content {
-    background: none transparent !important;
-  }
-}
+//page-camera {
+//  ion-content {
+//    background: none transparent !important;
+//  }
+//}
+//
+//ion-app, ion-backdrop, html, body {
+//  background: none transparent !important;
+//}
 
-ion-app, ion-backdrop, html, body {
-  background: none transparent !important;
+
+.camera{
+  &--content{
+    @include translate("both", absolute);
+    width: 80%;
+    text-align: center;
+    img{
+      width: 80px;
+    }
+    h2{
+      padding-top: 40px;
+      font-weight: 400;
+      font-size: 3rem;
+    }
+  }
 }

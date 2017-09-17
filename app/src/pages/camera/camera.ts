@@ -1,8 +1,12 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {QRScanner, QRScannerStatus} from '@ionic-native/qr-scanner';
+import {Injectable} from '@angular/core';
+// import {Http} from '@angular/http';
+import {HttpClient, HttpClientModule, HttpHeaders} from '@angular/common/http';
 
-import { VerificationPage } from '../verification/verification';
+import {VerificationPage} from '../verification/verification';
+import { WalletPage } from "../wallet/wallet";
 
 /**
  * Generated class for the CameraPage page.
@@ -16,10 +20,16 @@ import { VerificationPage } from '../verification/verification';
   selector: 'page-camera',
   templateUrl: 'camera.html',
 })
+@Injectable()
 export class CameraPage {
   scanSub;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private qrScanner: QRScanner) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private qrScanner: QRScanner,
+    private http: HttpClient
+  ) {
   }
 
   ionViewDidLoad() {
@@ -31,18 +41,28 @@ export class CameraPage {
           // camera permission was granted
           // start scanning
           this.scanSub = this.qrScanner.scan().subscribe(function (text: string) {
-            alert('Scanned something' + text);
-            this.navCtrl.push(VerificationPage, {
-              recipientName: 'Google',
-              title: 'Internship',
-              dateSigned: '01-OCT-17',
-              status: 'passed'
-            });
+            this.verifyQR(text)
+              .subscribe(function (data) {
+                  let certData = JSON.parse(text);
+                  alert(data.isValid);
+                  alert(data.status);
+                  alert(certData);
+                  this.navCtrl.push(VerificationPage, {
+                    recipientName: certData.r,
+                    title: certData.n,
+                    issuer: certData.i,
+                    dateSigned: certData.d,
+                    status: data.status
+                  });
+                }.bind(this),
+                err => {
+                  alert(`Err ${err.message}`);
+                  this.navCtrl.setRoot(WalletPage);
+                });
 
             // hide camera preview
             this.qrScanner.hide();
             this.scanSub.unsubscribe(); // stop scanning
-
           }.bind(this));
 
           this.qrScanner.useBackCamera();
@@ -66,6 +86,13 @@ export class CameraPage {
     this.scanSub.unsubscribe();
     this.qrScanner.pausePreview();
     this.qrScanner.hide();
+  }
+
+  verifyQR(content) {
+    alert('Content: ' + content);
+    return this.http.post('http://35.182.241.89:3000/validate', content, {
+      headers: new HttpHeaders().set('Content-Type', 'application/json')
+    });
   }
 
 }

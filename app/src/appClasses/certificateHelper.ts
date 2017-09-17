@@ -6,11 +6,20 @@ export class certificateHelper{
     private title: string,
     private issuerName: string,
     private recipientName: string,
+    private logo: string,
     private dateSigned: string,
-    private data: [{name: string}]
+    // private data: {
+    //   issued: string,
+    //   expires: string,
+    //   status: string,
+    //   number: string
+    //   id_image: string
+    //
+    private data: any
   ){
     this.title = title;
     this.issuerName = issuerName;
+    this.logo = logo;
     this.recipientName = recipientName;
     this.dateSigned = dateSigned;
     this.data = data;
@@ -33,6 +42,10 @@ export class certificateHelper{
   }
   getDateSigned(){
     return this.getDateSigned()
+  }
+
+  getIcon(){
+    return this.logo;
   }
 
   getData(){

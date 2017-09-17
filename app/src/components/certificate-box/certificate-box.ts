@@ -21,6 +21,7 @@ export class CertificateBoxComponent {
   @Input() date: string;
   @Input() type: string;
   @Input() status: string;
+  @Input() logo: string;
 
   public statusMessage: string;
 

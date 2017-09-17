@@ -15,7 +15,9 @@ certificate-box {
           @include translate("x", relative);
           top: -40px;
           @include border-shadow(2px, 2px, 10px, rgba(0,0,0,0.15));
-
+          img{
+            @include translate("y", relative);
+          }
           &__square{
             border-radius: 5px;
           }
@@ -73,7 +75,7 @@ certificate-box {
         }
       }
       &__button{
-        margin: auto;
+        //margin: auto;
         padding: 20px 30px;
         font-size: 1.5rem;
         text-transform: uppercase;
@@ -93,7 +95,20 @@ certificate-box {
           color: white;
         }
         &__outline{
-          outline: 2px solid #E38068;
+          border: 2px solid #E38068;
+          background-color: transparent;
+        }
+      }
+    }
+    &__cta{
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 40px;
+      button{
+        left: 0;
+        transform: unset;
+        &:nth-child(1){
+          margin-bottom: 20px;
         }
       }
     }

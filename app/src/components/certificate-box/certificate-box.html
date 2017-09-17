@@ -1,18 +1,18 @@
 <div class="certificate certificate__content">
   <div class="certificate__content__box">
     <div *ngIf="type == 'popup'" class="certificate__content__box__icon certificate__content__box__icon__square">
-      <!--<img src="{{icon}}"/>-->
+      <img src="{{logo}}"/>
     </div>
     <div *ngIf="type == 'verification'" class="certificate__content__box__icon certificate__content__box__icon__circle">
-      <img *ngIf="status == 'passed'" src="./assets/img/landing/success.svg"/>
-      <img *ngIf="status == 'failed'" src="./assets/img/landing/revoked.svg"/>
+      <img *ngIf="status == 'active' || status == 'reissued'" src="./assets/img/landing/success.svg"/>
+      <img *ngIf="status == 'invalid'" src="./assets/img/landing/revoked.svg"/>
     </div>
     <h2>{{title}}</h2>
     <hr *ngIf="type == 'verification'">
-    <h4 class="certificate__content__box__verification certificate__content__box__verification__passed" *ngIf="type == 'verification' && status == 'passed'">
+    <h4 class="certificate__content__box__verification certificate__content__box__verification__passed" *ngIf="type == 'verification' && status == 'active' || status == 'reissued'">
       {{statusMessage}}
     </h4>
-    <h4 class="certificate__content__box__verification certificate__content__box__verification__failed" *ngIf="type == 'verification' && status == 'failed'">
+    <h4 class="certificate__content__box__verification certificate__content__box__verification__failed" *ngIf="type == 'verification' && status == 'invalid'">
       {{statusMessage}}
     </h4>
     <h3 class="certificate__content__box__info__text">Certificate Info</h3>
@@ -28,7 +28,7 @@
     </div>
   </div>
   <button *ngIf="type == 'popup'" class="certificate__content__button certificate__content__button__full" (click)="getVerificationCode(certificate)">Verification Code</button>
-  <div *ngIf="type == 'verification'">
+  <div class="certificate__cta" *ngIf="type == 'verification'">
     <button class="certificate__content__button certificate__content__button__full" (click)="cameraPage()">Scan Again</button>
     <button class="certificate__content__button certificate__content__button__outline" (click)="cancel()">Cancel</button>
   </div>

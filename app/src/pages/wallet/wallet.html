@@ -12,9 +12,9 @@
     <h1 class="wallet--title">Your Certificates</h1>
     <hr class="divider divider__gradient">
     <div class="wallet__categories">
-      <wallet-catgeory [data]="walletData" category="Education"></wallet-catgeory>
-      <wallet-catgeory [data]="walletData" category="Education"></wallet-catgeory>
-      <wallet-catgeory [data]="walletData" category="Education"></wallet-catgeory>
+      <wallet-catgeory *ngFor="let category of walletData" [data]="category.item" [category]="category.cat"></wallet-catgeory>
+      <!--<wallet-catgeory [data]="walletData" category="Education"></wallet-catgeory>-->
+      <!--<wallet-catgeory [data]="walletData" category="Education"></wallet-catgeory>-->
     </div>
   </div>
   <certificate-popup *ngIf="popup.getPopupStatus()"></certificate-popup>

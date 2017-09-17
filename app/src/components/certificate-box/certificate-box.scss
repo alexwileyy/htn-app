@@ -28,6 +28,11 @@ certificate-box {
           font-size: 25px;
           margin: 5px auto 0 auto;
         }
+        hr{
+          margin: 15px auto !important;
+          width: 10%;
+          height: 2px;
+        }
         &__info{
           display: flex;
           justify-content: center;
@@ -38,6 +43,7 @@ certificate-box {
             border-bottom: 1px solid rgba(0,0,0,0.16) !important;
             padding: 15px;
             font-weight: 300;
+            margin-top: 30px;
           }
           &__item{
             width: 50%;
@@ -57,7 +63,7 @@ certificate-box {
           }
         }
         &__verification{
-          padding-bottom: 20px;
+          //padding-bottom: 20px;
           &__passed{
             color: #84E5A9;
           }

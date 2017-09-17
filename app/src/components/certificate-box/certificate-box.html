@@ -8,7 +8,7 @@
       <img *ngIf="status == 'failed'" src="./assets/img/landing/revoked.svg"/>
     </div>
     <h2>{{title}}</h2>
-    <hr>
+    <hr *ngIf="type == 'verification'">
     <h4 class="certificate__content__box__verification certificate__content__box__verification__passed" *ngIf="type == 'verification' && status == 'passed'">
       {{statusMessage}}
     </h4>

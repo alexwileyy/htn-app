@@ -11,7 +11,7 @@ import { VerificationPage } from '../pages/verification/verification';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = VerificationPage;
+  rootPage:any = TabsPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

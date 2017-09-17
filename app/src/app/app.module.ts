@@ -7,6 +7,12 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { WalletPage } from '../pages/wallet/wallet';
 import { CameraPage } from '../pages/camera/camera';
 
+/*
+  Components
+ */
+import { HeaderComponent } from '../components/header/header';
+import { WalletCatgeoryComponent } from '../components/wallet-catgeory/wallet-catgeory';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -15,11 +21,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     TabsPage,
     WalletPage,
-    CameraPage
+    CameraPage,
+    HeaderComponent,
+    WalletCatgeoryComponent
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
   entryComponents: [

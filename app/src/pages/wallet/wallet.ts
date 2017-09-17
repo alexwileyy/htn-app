@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { certificateHelper } from '../../appClasses/certificateHelper';
 /**
  * Generated class for the WalletPage page.
  *
@@ -15,7 +15,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class WalletPage {
 
+  public walletData: any = new Array();
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    for(let i = 0; i <= 3; i++){
+      let wallet = new certificateHelper(
+        'Certificate',
+        'AQA',
+        'Alex Wiley',
+        [{
+          name: 'hello'
+        }]
+      );
+      wallet.setBlockState('active');
+      this.walletData.push(
+        wallet
+      )
+    }
   }
 
   ionViewDidLoad() {

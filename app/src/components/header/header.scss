@@ -1,0 +1,24 @@
+@import "../../styles/mixins";
+app-header {
+  .header{
+    height: 64px;
+    position: relative;
+    &--title{
+      font-size: 26px;
+      float: left;
+      text-transform: uppercase;
+      margin-left: 20px;
+      letter-spacing: 2px;
+      margin-top: 18px;
+      color: #3C3C3C;
+    }
+    &--icon{
+      float: right;
+      width: 26px;
+      height: 26px;
+      object-fit: cover;
+      margin: 20px;
+      border-radius: 50%;
+    }
+  }
+}

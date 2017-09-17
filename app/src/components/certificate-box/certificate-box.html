@@ -1,0 +1,20 @@
+<div class="certificate certificate__content">
+  <div class="certificate__content__box">
+    <div class="certificate__content__box__icon">
+      <!--<img src="{{icon}}"/>-->
+    </div>
+    <h2>{{title}}</h2>
+    <h3 class="certificate__content__box__info__text">Certificate Info</h3>
+    <div class="certificate__content__box__info">
+      <div class="certificate__content__box__info__item">
+        <p>issues by</p>
+        <h3>{{name}}</h3>
+      </div>
+      <div class="certificate__content__box__info__item">
+        <p>date signed</p>
+        <h3>{{date}}</h3>
+      </div>
+    </div>
+  </div>
+  <button class="certificate__content__button" (click)="getVerificationCode(certificate)">Verification Code</button>
+</div>

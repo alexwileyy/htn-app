@@ -8,6 +8,6 @@ import { CameraPage } from './camera';
   ],
   imports: [
     IonicPageModule.forChild(CameraPage),
-  ],
+  ]
 })
 export class CameraPageModule {}

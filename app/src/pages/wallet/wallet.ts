@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { certificateHelper } from '../../appClasses/certificateHelper';
+import { PoupProvider } from '../../providers/poup/poup';
 /**
  * Generated class for the WalletPage page.
  *
@@ -17,12 +18,15 @@ export class WalletPage {
 
   public walletData: any = new Array();
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public showPopup: any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public popup: PoupProvider) {
     for(let i = 0; i <= 3; i++){
       let wallet = new certificateHelper(
         'Certificate',
         'AQA',
         'Alex Wiley',
+        '01-SEP-17',
         [{
           name: 'hello'
         }]
@@ -36,6 +40,7 @@ export class WalletPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad WalletPage');
+    this.showPopup = this.popup.getPopupStatus();
   }
 
 }

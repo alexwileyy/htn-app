@@ -1,22 +1,22 @@
-import { NgModule, ErrorHandler } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { MyApp } from './app.component';
+import {NgModule, ErrorHandler} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
+import {MyApp} from './app.component';
 
-import { TabsPage } from '../pages/tabs/tabs';
-import { WalletPage } from '../pages/wallet/wallet';
-import { CameraPage } from '../pages/camera/camera';
+import {TabsPage} from '../pages/tabs/tabs';
+import {WalletPage} from '../pages/wallet/wallet';
+import {CameraPage} from '../pages/camera/camera';
 
 /*
   Components
  */
-import { HeaderComponent } from '../components/header/header';
-import { WalletCatgeoryComponent } from '../components/wallet-catgeory/wallet-catgeory';
+import {HeaderComponent} from '../components/header/header';
+import {WalletCatgeoryComponent} from '../components/wallet-catgeory/wallet-catgeory';
 
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+import {StatusBar} from '@ionic-native/status-bar';
+import {SplashScreen} from '@ionic-native/splash-screen';
 
-import { QRScanner } from '@ionic-native/qr-scanner';
+import {QRScanner} from '@ionic-native/qr-scanner';
 
 @NgModule({
   declarations: [
@@ -45,4 +45,5 @@ import { QRScanner } from '@ionic-native/qr-scanner';
     QRScanner
   ]
 })
-export class AppModule {}
+export class AppModule {
+}

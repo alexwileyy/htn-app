@@ -10,6 +10,7 @@ import { CameraPage } from '../pages/camera/camera';
 /*
   Components
  */
+import { CertificateComponent } from '../components/certificate-popup/certificate';
 import { HeaderComponent } from '../components/header/header';
 import { WalletCatgeoryComponent } from '../components/wallet-catgeory/wallet-catgeory';
 
@@ -25,7 +26,8 @@ import { QRScanner } from '@ionic-native/qr-scanner';
     WalletPage,
     CameraPage,
     HeaderComponent,
-    WalletCatgeoryComponent
+    WalletCatgeoryComponent,
+    CertificateComponent
   ],
   imports: [
     BrowserModule,

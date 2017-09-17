@@ -1,9 +1,8 @@
 @import "../../styles/mixins";
 certificate-box {
   .certificate{
+    margin-top: 40px;
     &__content{
-      @include translate("both", absolute);
-      width: 85%;
       &__box{
         margin: auto;
         background-color: white;

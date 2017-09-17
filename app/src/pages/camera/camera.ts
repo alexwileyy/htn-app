@@ -29,14 +29,17 @@ export class CameraPage {
 
           // start scanning
           let scanSub = this.qrScanner.scan().subscribe((text: string) => {
-            console.log('Scanned something', text);
+            alert('Scanned something' + text);
 
-            this.qrScanner.hide(); // hide camera preview
+            //this.qrScanner.hide(); // hide camera preview
             scanSub.unsubscribe(); // stop scanning
           });
 
           // show camera preview
-          this.qrScanner.show();
+          this.qrScanner.show()
+            .then((state) => {
+              alert('Done');
+            });
 
           // wait for user to scan something, then the observable callback will be called
 
@@ -44,11 +47,13 @@ export class CameraPage {
           // camera permission was permanently denied
           // you must use QRScanner.openSettings() method to guide the user to the settings page
           // then they can grant the permission from there
+          alert('Permissions denied 1')
         } else {
           // permission was denied, but not permanently. You can ask for permission again at a later time.
+          alert('Permissions denied 2')
         }
       })
-      .catch((e: any) => console.log('Error is', e));
+      .catch((e: any) => alert('Overall error ' + e.toString()));
   }
 
 }

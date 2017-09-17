@@ -1,0 +1,16 @@
+<!-- Generated template for the WalletCatgeoryComponent component -->
+<div class="wallet-category">
+  <div class="wallet-category__header">
+    <img src="./assets/img/landing/folder-open.svg"/>
+    <h2>{{category}}</h2>
+  </div>
+  <hr class="wallet-category__divider">
+  <ul class="wallet-category__list">
+    <li *ngFor="let block of data">
+      <p>{{block.getTitle()}}</p>
+      <img *ngIf="block.getBlockState() == 'active'" src="./assets/img/landing/active.svg"/>
+      <img *ngIf="block.getBlockState() == 'reissued'" src="./assets/img/landing/reissued.svg"/>
+      <img *ngIf="block.getBlockState() == 'revoked'" src="./assets/img/landing/revoked.svg"/>
+    </li>
+  </ul>
+</div>

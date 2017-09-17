@@ -1,3 +1,21 @@
 page-wallet {
-
+  .wallet{
+    padding-bottom: 50px;
+    &--title{
+      margin-top: 20px;
+      font-size: 26px;
+      color: #656565;
+    }
+    hr{
+      margin: 15px 0;
+    }
+    &__categories{
+      margin: 40px 0;
+      wallet-catgeory{
+        .wallet-category{
+          margin-top: 25px;
+        }
+      }
+    }
+  }
 }

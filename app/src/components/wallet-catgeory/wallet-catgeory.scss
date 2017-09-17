@@ -1,0 +1,44 @@
+wallet-catgeory {
+  .wallet-category{
+    background-color: white;
+    @include border-shadow(1px, 1px, 15px, rgba(0,0,0,0.15));
+    padding-bottom: 5px;
+    &__header{
+      //background-color: red;
+      height: 35px;
+      padding: 9px 0 0 0;
+      box-sizing: border-box;
+      img, h2{
+        display: inline-block;
+        vertical-align: middle;
+      }
+      h2{
+        margin-left: 5px;
+        text-transform: uppercase;
+        font-size: 1.8rem;
+        color: #6F6F6F;
+      }
+      img{
+        height: 80%;
+        margin-left: 20px;
+      }
+    }
+    &__divider{
+      width: 94%;
+      background-color: rgba(0, 0, 0, 0.10);
+      height: 1px;
+      margin: 5px 0 5px 6% !important;
+    }
+    &__list{
+      width: 94%;
+      list-style-type: none;
+      margin: 0 6%;
+      padding: 0;
+      li{
+        margin: 15px 15px;
+        color: #6F6F6F;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}

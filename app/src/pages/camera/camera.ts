@@ -1,6 +1,8 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
-import { QRScanner, QRScannerStatus} from '@ionic-native/qr-scanner';
+import {QRScanner, QRScannerStatus} from '@ionic-native/qr-scanner';
+
+import { WalletPage } from '../wallet/wallet';
 
 /**
  * Generated class for the CameraPage page.
@@ -15,6 +17,8 @@ import { QRScanner, QRScannerStatus} from '@ionic-native/qr-scanner';
   templateUrl: 'camera.html',
 })
 export class CameraPage {
+  scanSub;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private qrScanner: QRScanner) {
   }
 
@@ -25,35 +29,38 @@ export class CameraPage {
       .then((status: QRScannerStatus) => {
         if (status.authorized) {
           // camera permission was granted
-
-
           // start scanning
-          let scanSub = this.qrScanner.scan().subscribe((text: string) => {
+          this.scanSub = this.qrScanner.scan().subscribe(function (text: string) {
             alert('Scanned something' + text);
+            this.navCtrl.setRoot(WalletPage);
 
-            //this.qrScanner.hide(); // hide camera preview
-            scanSub.unsubscribe(); // stop scanning
-          });
+            // hide camera preview
+            this.qrScanner.hide();
+            this.scanSub.unsubscribe(); // stop scanning
 
-          // show camera preview
-          this.qrScanner.show()
-            .then((state) => {
-              alert('Done');
-            });
+          }.bind(this));
 
-          // wait for user to scan something, then the observable callback will be called
-
+          this.qrScanner.useBackCamera();
+          this.qrScanner.show();
+          this.qrScanner.resumePreview();
         } else if (status.denied) {
           // camera permission was permanently denied
           // you must use QRScanner.openSettings() method to guide the user to the settings page
           // then they can grant the permission from there
-          alert('Permissions denied 1')
+          alert('Permissions permanently denied');
         } else {
           // permission was denied, but not permanently. You can ask for permission again at a later time.
-          alert('Permissions denied 2')
+          alert('Permissions denied');
         }
       })
       .catch((e: any) => alert('Overall error ' + e.toString()));
+
+  }
+
+  ionViewWillLeave() {
+    this.scanSub.unsubscribe();
+    this.qrScanner.pausePreview();
+    this.qrScanner.hide();
   }
 
 }

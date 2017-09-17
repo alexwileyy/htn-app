@@ -1,3 +1,9 @@
 page-camera {
+  ion-content {
+    background: none transparent !important;
+  }
+}
 
+ion-app, ion-backdrop, html, body {
+  background: none transparent !important;
 }

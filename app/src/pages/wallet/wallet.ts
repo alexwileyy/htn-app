@@ -19,15 +19,17 @@ export class WalletPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     for(let i = 0; i <= 3; i++){
+      let wallet = new certificateHelper(
+        'Certificate',
+        'AQA',
+        'Alex Wiley',
+        [{
+          name: 'hello'
+        }]
+      );
+      wallet.setBlockState('active');
       this.walletData.push(
-        new certificateHelper(
-          'Certificate',
-          'AQA',
-          'Alex Wiley',
-          [{
-            name: 'hello'
-          }]
-        )
+        wallet
       )
     }
   }

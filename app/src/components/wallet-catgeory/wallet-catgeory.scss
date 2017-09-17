@@ -38,6 +38,18 @@ wallet-catgeory {
         margin: 15px 15px;
         color: #6F6F6F;
         letter-spacing: 1px;
+        p, img{
+          display: inline-block;
+        }
+        img{
+          width: 25px;
+          height: 25px;
+          position: relative;
+          left: 63%;
+        }
+        p, img{
+          vertical-align: middle;
+        }
       }
     }
   }
